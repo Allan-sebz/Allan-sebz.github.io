@@ -1,0 +1,21 @@
+@import url('./base/_tokens.css');
+@import url('./base/_reset.css');
+@import url('./base/_typography.css');
+
+@import url('./utils/_animations.css');
+@import url('./utils/_marquee.css');
+@import url('./utils/_responsive.css');
+
+@import url('./components/_buttons.css');
+@import url('./components/_nav.css');
+@import url('./components/_cursor.css');
+@import url('./components/_preloader.css');
+@import url('./components/_cards.css');
+@import url('./components/_form.css');
+
+@import url('./sections/_hero.css');
+@import url('./sections/_about.css');
+@import url('./sections/_projects.css');
+@import url('./sections/_experience.css');
+@import url('./sections/_services.css');
+@import url('./sections/_contact.css');
