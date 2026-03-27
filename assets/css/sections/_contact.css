@@ -1,0 +1,42 @@
+#contact{padding:12rem 0;background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem}
+.contact-h2{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:1.5rem}
+.contact-desc{color:var(--text-muted);line-height:1.85;margin-bottom:2.5rem;font-size:1rem}
+
+.c-detail{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.c-icon{width:42px;height:42px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.c-txt{font-size:.88rem;color:var(--text-muted)}
+.c-txt strong{display:block;color:var(--text);font-family:var(--font-sans);font-size:.92rem;font-weight:700}
+
+.social-row{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:2.5rem}
+
+.soc-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 17px;background:var(--surface);border:1px solid var(--border);
+  border-radius:100px;font-family:var(--font-mono);font-size:.7rem;
+  color:var(--text-muted);letter-spacing:.05em;transition:all .3s;
+}
+
+.soc-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+
+footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 0 2rem}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+.foot-logo{font-family:var(--font-display);font-style:italic;font-size:1.3rem}
+.foot-logo em{font-style:normal;color:var(--accent)}
+.foot-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
+.foot-links a{font-size:.78rem;color:var(--text-muted);letter-spacing:.03em;transition:color .3s}
+.foot-links a:hover{color:var(--accent)}
+.foot-copy{font-size:.72rem;color:var(--text-faint);text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}
+.foot-copy span{color:var(--accent)}
+
+#btt{
+  position:fixed;bottom:2rem;right:2rem;z-index:5000;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .4s,transform .4s var(--ease),background .3s,border-color .3s;
+}
+
+#btt.show{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--accent);border-color:var(--accent);color:#07080d}
