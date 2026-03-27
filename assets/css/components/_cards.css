@@ -1,0 +1,117 @@
+.fl-card{
+  position:absolute;bottom:-2.5rem;right:-2rem;
+  background:var(--surface);border:1px solid var(--border2);
+  border-radius:12px;padding:1.2rem 1.5rem;
+  display:flex;align-items:center;gap:1rem;
+  backdrop-filter:blur(12px);
+  transform:translateY(30px);opacity:0;
+}
+
+.fl-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:var(--accent-glow);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+
+.fl-txt strong{display:block;font-family:var(--font-sans);font-size:1.15rem;font-weight:800;color:var(--accent)}
+.fl-txt span{font-size:.75rem;color:var(--text-muted)}
+
+.proj-card{
+  width:380px;flex-shrink:0;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+  transition:border-color .4s,transform .4s var(--ease),box-shadow .4s;
+  will-change:transform;position:relative;
+}
+
+.proj-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-10px);
+  box-shadow:0 40px 80px rgba(0,0,0,.4),0 0 0 1px rgba(74,244,176,.08);
+}
+
+.proj-card.hidden{display:none}
+
+.proj-img{aspect-ratio:16/9;background:var(--surface2);position:relative;overflow:hidden}
+
+.proj-img-inner{
+  width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;font-size:3rem;
+  transition:transform .7s var(--ease);
+}
+
+.proj-card:hover .proj-img-inner{transform:scale(1.08)}
+
+.proj-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(7,8,13,.95),transparent);
+  opacity:0;transition:opacity .4s;
+  display:flex;align-items:flex-end;gap:.6rem;padding:1.25rem;
+}
+
+.proj-card:hover .proj-overlay{opacity:1}
+
+.plbtn{
+  padding:7px 15px;border-radius:100px;font-size:.7rem;
+  font-family:var(--font-mono);letter-spacing:.04em;transition:all .3s;
+}
+
+.plive{background:var(--accent);color:#07080d;font-weight:600}
+.pgh{background:var(--surface);border:1px solid var(--border2);color:var(--text)}
+.pgh:hover{border-color:var(--accent);color:var(--accent)}
+
+.proj-body{padding:1.5rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
+
+.ptag{
+  padding:3px 10px;border-radius:100px;font-size:.6rem;
+  font-family:var(--font-mono);letter-spacing:.04em;
+  background:var(--accent2-glow);color:var(--accent2);
+  border:1px solid rgba(124,92,252,.18);
+}
+
+.proj-title{font-family:var(--font-sans);font-size:1.1rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.01em}
+.proj-desc{font-size:.82rem;color:var(--text-muted);line-height:1.7}
+.proj-num{position:absolute;top:1rem;right:1rem;font-family:var(--font-mono);font-size:.6rem;color:var(--text-faint)}
+
+.serv-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);padding:2.5rem 2rem;
+  position:relative;overflow:hidden;
+  transition:border-color .4s,transform .4s var(--ease);
+  will-change:transform;
+}
+
+.serv-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent));
+  transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);
+}
+
+.serv-card:hover{border-color:transparent;transform:translateY(-8px)}
+.serv-card:hover::before{transform:scaleX(1)}
+
+.serv-icon{
+  width:52px;height:52px;border-radius:12px;background:var(--surface2);
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  margin-bottom:1.5rem;transition:background .3s,transform .4s var(--ease);
+}
+
+.serv-card:hover .serv-icon{background:var(--accent-glow);transform:rotate(-6deg) scale(1.1)}
+.serv-title{font-family:var(--font-sans);font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+.serv-desc{font-size:.85rem;color:var(--text-muted);line-height:1.8}
+.serv-list{list-style:none;margin-top:1.25rem;display:flex;flex-direction:column;gap:.45rem}
+.serv-list li{font-size:.78rem;color:var(--text-muted);display:flex;align-items:center;gap:.5rem}
+.serv-list li::before{content:'→';color:var(--accent);font-size:.7rem}
+
+.cert-item{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:1.1rem 1.25rem;
+  display:flex;align-items:center;gap:1rem;margin-bottom:.65rem;
+  transition:border-color .3s,transform .35s var(--ease);
+}
+
+.cert-item:hover{border-color:var(--accent2);transform:translateX(8px)}
+.cert-icon{font-size:1.6rem;flex-shrink:0}
+.cert-name{font-family:var(--font-sans);font-size:.88rem;font-weight:700;margin-bottom:2px}
+.cert-issuer{font-size:.72rem;color:var(--text-muted)}
