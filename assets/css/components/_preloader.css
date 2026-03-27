@@ -1,0 +1,24 @@
+#preloader{
+  position:fixed;inset:0;z-index:10000;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+}
+
+.pl-logo{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,6vw,5rem);
+  font-style:italic;
+  overflow:hidden;line-height:1;
+}
+
+.pl-logo span{display:inline-block;transform:translateY(110%)}
+
+.pl-bar-wrap{width:180px;height:1px;background:var(--border2)}
+.pl-bar{height:100%;background:var(--accent);width:0%;transition:width .05s linear}
+
+.pl-num{
+  font-family:var(--font-mono);font-size:.7rem;
+  letter-spacing:.15em;color:var(--text-muted);
+}
+
+.pl-curtain{position:fixed;inset:0;z-index:9999;background:var(--accent);transform:translateY(100%)}
