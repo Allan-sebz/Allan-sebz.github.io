@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Allan Sebz — Software Developer, IoT Enthusiast & Problem Solver. Premium portfolio."/>
+  <meta name="keywords" content="Allan Sebz, Software Developer, IoT, Web Development, Portfolio, Uganda"/>
+  <meta name="author" content="Allan Sebz"/>
+  <meta property="og:title" content="Allan Sebz — Software Developer"/>
+  <meta property="og:description" content="Premium Awwwards-level portfolio — Allan Sebz"/>
+  <meta property="og:type" content="website"/>
+  <title>Allan Sebz — Software Developer</title>
+
+  <!-- Fonts: PP Neue Montreal feel via Instrument Serif + DM Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+
+<!-- CURSOR ELEMENTS -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<div id="cur-label"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-prog"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-logo"><span>Allan Sebz.</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="pl-bar"></div></div>
+  <div class="pl-num" id="pl-num">0%</div>
+</div>
+<div class="pl-curtain" id="pl-curtain"></div>
+
+<!-- SIDE INDEX -->
+<nav id="side-index" aria-label="Section navigation">
+  <div class="side-dot active" data-sec="hero" title="Home"><div class="side-dot-label">Home</div></div>
+  <div class="side-dot" data-sec="about" title="About"><div class="side-dot-label">About</div></div>
+  <div class="side-dot" data-sec="projects" title="Work"><div class="side-dot-label">Work</div></div>
+  <div class="side-dot" data-sec="experience" title="Experience"><div class="side-dot-label">Experience</div></div>
+  <div class="side-dot" data-sec="services" title="Services"><div class="side-dot-label">Services</div></div>
+  <div class="side-dot" data-sec="contact" title="Contact"><div class="side-dot-label">Contact</div></div>
+</nav>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Allan <em>Sebz</em></a>
+    <ul class="nav-links">
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#projects" data-nav="projects">Work</a></li>
+      <li><a href="#experience" data-nav="experience">Experience</a></li>
+      <li><a href="#services" data-nav="services">Services</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-pill" id="themePill" aria-label="Toggle theme"></button>
+      <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-menu-num">— Navigation</div>
+  <a href="#about" class="mob-link">About</a>
+  <a href="#projects" class="mob-link">Work</a>
+  <a href="#experience" class="mob-link">Experience</a>
+  <a href="#services" class="mob-link">Services</a>
+  <a href="#contact" class="mob-link">Contact</a>
+</div>
+
+<!-- PROJECT HOVER PREVIEW -->
+<div id="proj-preview"><div id="proj-preview-inner"></div></div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-grid-lines"></div>
+  <!-- Animated canvas bg -->
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="hero-c container">
+    <div class="hero-badge">
+      <span class="badge-pulse"></span>
+      Available for opportunities
+    </div>
+    <p class="hero-eyebrow">Software Developer · IoT Enthusiast · Problem Solver</p>
+    <h1 class="hero-h1" id="hero-title">
+      Crafting Digital<br><em>Experiences</em><br>That Matter.
+    </h1>
+    <div class="hero-row">
+      <p class="hero-sub">
+        Hi, I'm <strong>Allan Sebz</strong> — a full-stack developer and IoT innovator 
+        based in Uganda, building scalable systems that bridge the physical and digital worlds.
+      </p>
+      <div class="hero-cta">
+        <div class="mag-wrap">
+          <a href="#projects" class="btn btn-solid mag-btn" data-label="View Work">
+            View My Work
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+        <div class="mag-wrap">
+          <a href="#contact" class="btn btn-ghost mag-btn" data-label="Say Hi">Contact Me</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-n" data-count="15">0+</span><span class="stat-l">Projects Built</span></div>
+      <div><span class="stat-n" data-count="3">0+</span><span class="stat-l">Years Experience</span></div>
+      <div><span class="stat-n" data-count="8">0+</span><span class="stat-l">Technologies</span></div>
+      <div><span class="stat-n" data-count="5">0+</span><span class="stat-l">Happy Clients</span></div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-txt">Scroll to explore</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner" id="marqInner">
+    <div class="m-item">Web Development <span class="m-dot">●</span></div>
+    <div class="m-item">IoT Engineering <span class="m-dot">●</span></div>
+    <div class="m-item">Backend Systems <span class="m-dot">●</span></div>
+    <div class="m-item">Database Design <span class="m-dot">●</span></div>
+    <div class="m-item">API Architecture <span class="m-dot">●</span></div>
+    <div class="m-item">Arduino & Embedded <span class="m-dot">●</span></div>
+    <div class="m-item">Problem Solving <span class="m-dot">●</span></div>
+    <div class="m-item">UI/UX Thinking <span class="m-dot">●</span></div>
+    <div class="m-item">Web Development <span class="m-dot">●</span></div>
+    <div class="m-item">IoT Engineering <span class="m-dot">●</span></div>
+    <div class="m-item">Backend Systems <span class="m-dot">●</span></div>
+    <div class="m-item">Database Design <span class="m-dot">●</span></div>
+    <div class="m-item">API Architecture <span class="m-dot">●</span></div>
+    <div class="m-item">Arduino & Embedded <span class="m-dot">●</span></div>
+    <div class="m-item">Problem Solving <span class="m-dot">●</span></div>
+    <div class="m-item">UI/UX Thinking <span class="m-dot">●</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-col">
+        <div class="about-img-frame" id="aboutImgFrame">
+          <div class="about-img-inner">
+            <div class="avatar">AS</div>
+            <p class="about-photo-note">// your photo here</p>
+          </div>
+        </div>
+        <div class="fl-card" id="floatCard">
+          <div class="fl-icon">⚡</div>
+          <div class="fl-txt"><strong>15+</strong><span>Projects Completed</span></div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="sec-label" data-split>About Me</div>
+        <h2 class="about-h2" data-split>Passionate Builder.<br><em>Creative</em> Thinker.</h2>
+        <p class="about-desc" data-fade>
+          I'm Allan Sebz, a software developer and IoT enthusiast from Uganda with a deep passion 
+          for crafting elegant solutions to complex problems. I thrive at the intersection of hardware 
+          and software, bringing ideas from concept to deployed reality.
+        </p>
+        <div class="about-box" data-fade>
+          <p>My journey into tech started with curiosity — tinkering with microcontrollers and wondering 
+          how the world could be made smarter. That curiosity evolved into a career building full-stack 
+          web applications, backend systems, and IoT solutions that make real impact. I love clean code, 
+          bold design, and purposeful technology.</p>
+        </div>
+        <div class="skills-h" data-fade>Core Proficiencies</div>
+        <div class="skbars" data-fade>
+          <div class="skbar"><div class="skbar-top"><span>Python / Django</span><span>90%</span></div><div class="skbar-track"><div class="skbar-fill" data-w="90"></div></div></div>
+          <div class="skbar"><div class="skbar-top"><span>JavaScript / Node.js</span><span>85%</span></div><div class="skbar-track"><div class="skbar-fill" data-w="85"></div></div></div>
+          <div class="skbar"><div class="skbar-top"><span>IoT / Arduino / ESP32</span><span>80%</span></div><div class="skbar-track"><div class="skbar-fill" data-w="80"></div></div></div>
+          <div class="skbar"><div class="skbar-top"><span>Databases (MySQL / PostgreSQL)</span><span>82%</span></div><div class="skbar-track"><div class="skbar-fill" data-w="82"></div></div></div>
+        </div>
+        <div class="skills-h skills-h-stack" data-fade>Tech Stack</div>
+        <div class="chips" data-fade>
+          <span class="chip">Python</span><span class="chip">JavaScript</span>
+          <span class="chip">Node.js</span><span class="chip">React</span>
+          <span class="chip">Django</span><span class="chip">MySQL</span>
+          <span class="chip">PostgreSQL</span><span class="chip">Arduino</span>
+          <span class="chip">ESP32</span><span class="chip">MQTT</span>
+          <span class="chip">REST APIs</span><span class="chip">Docker</span>
+          <span class="chip">Git</span><span class="chip">Linux</span>
+        </div>
+        <div class="about-cta-wrap" data-fade>
+          <div class="mag-wrap">
+            <a href="#" class="btn btn-solid mag-btn" download data-label="Download">
+              Download CV
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROJECTS
+═══════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="proj-header">
+      <div class="sec-label" data-split>Selected Work</div>
+      <h2 class="proj-h2" data-split>Things I've <em>Built.</em></h2>
+    </div>
+    <div class="filter-tabs" id="filterTabs">
+      <button class="ftab active" data-filter="all">All</button>
+      <button class="ftab" data-filter="web">Web</button>
+      <button class="ftab" data-filter="iot">IoT</button>
+      <button class="ftab" data-filter="backend">Backend</button>
+    </div>
+  </div>
+
+  <!-- PINNED HORIZONTAL SCROLL -->
+  <div id="projPin">
+    <div class="container container-no-pr">
+      <div class="proj-pin-track" id="projTrack">
+
+        <div class="proj-card" data-cat="iot web" data-emoji="🌡️">
+          <div class="proj-num">01</div>
+          <div class="proj-img"><div class="proj-img-inner">🌡️</div>
+            <div class="proj-overlay">
+              <a href="#" class="plbtn plive">Live Demo</a>
+              <a href="https://github.com/yourgithub" target="_blank" class="plbtn pgh">GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="ptag">IoT</span><span class="ptag">Web</span></div>
+            <div class="proj-title">Smart Environment Monitor</div>
+            <div class="proj-desc">Real-time IoT dashboard monitoring temp, humidity & air quality via ESP32 + MQTT with live web interface.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="web backend" data-emoji="🛒">
+          <div class="proj-num">02</div>
+          <div class="proj-img"><div class="proj-img-inner">🛒</div>
+            <div class="proj-overlay">
+              <a href="#" class="plbtn plive">Live Demo</a>
+              <a href="https://github.com/yourgithub" target="_blank" class="plbtn pgh">GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="ptag">Web</span><span class="ptag">Backend</span></div>
+            <div class="proj-title">E-Commerce Platform</div>
+            <div class="proj-desc">Full-featured marketplace — Django REST backend, JWT auth, Stripe payments & React storefront with real-time inventory.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="iot backend" data-emoji="🚪">
+          <div class="proj-num">03</div>
+          <div class="proj-img"><div class="proj-img-inner">🚪</div>
+            <div class="proj-overlay">
+              <a href="#" class="plbtn plive">Live Demo</a>
+              <a href="https://github.com/yourgithub" target="_blank" class="plbtn pgh">GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="ptag">IoT</span><span class="ptag">Backend</span></div>
+            <div class="proj-title">Smart Access Control</div>
+            <div class="proj-desc">RFID door system with Arduino, cloud logging, mobile alerts & admin dashboard for remote permission management.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="web" data-emoji="📊">
+          <div class="proj-num">04</div>
+          <div class="proj-img"><div class="proj-img-inner">📊</div>
+            <div class="proj-overlay">
+              <a href="#" class="plbtn plive">Live Demo</a>
+              <a href="https://github.com/yourgithub" target="_blank" class="plbtn pgh">GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="ptag">Web</span></div>
+            <div class="proj-title">Analytics Dashboard</div>
+            <div class="proj-desc">Business analytics SaaS with interactive charts, multi-tenant architecture & real-time data visualization.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="backend" data-emoji="🔌">
+          <div class="proj-num">05</div>
+          <div class="proj-img"><div class="proj-img-inner">🔌</div>
+            <div class="proj-overlay">
+              <a href="#" class="plbtn plive">Live Demo</a>
+              <a href="https://github.com/yourgithub" target="_blank" class="plbtn pgh">GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="ptag">Backend</span></div>
+            <div class="proj-title">REST API Gateway</div>
+            <div class="proj-desc">Microservices gateway in Node.js — rate limiting, auth middleware, request caching & comprehensive logging.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" data-cat="iot web" data-emoji="🌱">
+          <div class="proj-num">06</div>
+          <div class="proj-img"><div class="proj-img-inner">🌱</div>
+            <div class="proj-overlay">
+              <a href="#" class="plbtn plive">Live Demo</a>
+              <a href="https://github.com/yourgithub" target="_blank" class="plbtn pgh">GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="ptag">IoT</span><span class="ptag">Web</span></div>
+            <div class="proj-title">Agri-Tech Irrigation System</div>
+            <div class="proj-desc">Automated smart irrigation using soil moisture sensors & weather APIs to optimize water for Ugandan farmers.</div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div>
+  </div><!-- /pin -->
+
+  <!-- Fallback grid shown when filter is active (non-all) -->
+  <div class="container container-no-pt">
+    <div class="proj-grid-fallback" id="projGridFallback"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE
+═══════════════════════════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-label" data-split>My Journey</div>
+    <h2 class="exp-h2" data-split>Experience &amp; <em>Education.</em></h2>
+    <div class="exp-cols">
+      <div>
+        <div class="exp-col-label">Work Experience</div>
+        <div class="tl">
+          <div class="tl-item" data-fade>
+            <div class="tl-dot"></div>
+            <div class="tl-period">2023 — Present</div>
+            <div class="tl-title">Freelance Software Developer</div>
+            <div class="tl-org">Self-Employed · Remote</div>
+            <div class="tl-desc">Building full-stack web applications & IoT solutions for clients across East Africa. Django backends, React frontends, Arduino hardware integrations.</div>
+          </div>
+          <div class="tl-item" data-fade>
+            <div class="tl-dot"></div>
+            <div class="tl-period">2022 — 2023</div>
+            <div class="tl-title">Junior Backend Developer</div>
+            <div class="tl-org">Tech Startup · Kampala, Uganda</div>
+            <div class="tl-desc">Developed RESTful APIs for a fintech platform serving 10,000+ users. Optimized database queries reducing response times by 40%.</div>
+          </div>
+          <div class="tl-item" data-fade>
+            <div class="tl-dot"></div>
+            <div class="tl-period">2021 — 2022</div>
+            <div class="tl-title">IoT Intern</div>
+            <div class="tl-org">Innovation Lab · Uganda</div>
+            <div class="tl-desc">Prototyped smart agriculture solutions with ESP32, MQTT brokers & cloud dashboards. Presented to government stakeholders.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="exp-col-label">Education</div>
+        <div class="tl tl-mb">
+          <div class="tl-item" data-fade>
+            <div class="tl-dot"></div>
+            <div class="tl-period">2019 — 2023</div>
+            <div class="tl-title">BSc. Computer Science</div>
+            <div class="tl-org">Makerere University · Kampala</div>
+            <div class="tl-desc">Software engineering, embedded systems & network programming. Final project: Smart Campus IoT System.</div>
+          </div>
+          <div class="tl-item" data-fade>
+            <div class="tl-dot"></div>
+            <div class="tl-period">2016 — 2019</div>
+            <div class="tl-title">Uganda Advanced Certificate of Education</div>
+            <div class="tl-org">STEM-focused Secondary School</div>
+            <div class="tl-desc">Distinction in Mathematics, Physics & Computer Science. First in class programming competition.</div>
+          </div>
+        </div>
+        <div class="exp-col-label">Certifications</div>
+        <div class="cert-item" data-fade><div class="cert-icon">☁️</div><div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services · 2023</div></div></div>
+        <div class="cert-item" data-fade><div class="cert-icon">🐍</div><div><div class="cert-name">Python for Data Science</div><div class="cert-issuer">IBM / Coursera · 2022</div></div></div>
+        <div class="cert-item" data-fade><div class="cert-icon">🔧</div><div><div class="cert-name">IoT Fundamentals</div><div class="cert-issuer">Cisco Networking Academy · 2021</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="sec-label" data-split>What I Offer</div>
+    <h2 class="serv-h2" data-split>Services Tailored to<br><em>Your Vision.</em></h2>
+    <div class="serv-grid">
+      <div class="serv-card" data-fade>
+        <div class="serv-icon">🌐</div>
+        <div class="serv-title">Web Development</div>
+        <div class="serv-desc">Full-stack websites & web apps built with modern frameworks, optimized for performance, security & scalability.</div>
+        <ul class="serv-list"><li>React / Next.js frontends</li><li>Django / Node.js backends</li><li>REST & GraphQL APIs</li><li>Mobile-first responsive design</li></ul>
+      </div>
+      <div class="serv-card" data-fade>
+        <div class="serv-icon">⚙️</div>
+        <div class="serv-title">Backend Systems</div>
+        <div class="serv-desc">Robust, scalable server-side architecture with clean APIs, efficient databases & enterprise-grade security.</div>
+        <ul class="serv-list"><li>Microservices architecture</li><li>Database design & optimization</li><li>Authentication & authorization</li><li>Cloud deployment (AWS / VPS)</li></ul>
+      </div>
+      <div class="serv-card" data-fade>
+        <div class="serv-icon">📡</div>
+        <div class="serv-title">IoT Solutions</div>
+        <div class="serv-desc">End-to-end IoT systems from hardware prototyping to cloud connectivity — turning environments into smart, data-driven spaces.</div>
+        <ul class="serv-list"><li>Arduino & ESP32 development</li><li>Sensor integration & MQTT</li><li>Real-time dashboards</li><li>Automation & alerting systems</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-label" data-split>Get In Touch</div>
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-h2" data-split>Let's Build Something <em>Amazing.</em></h2>
+        <p class="contact-desc" data-fade>Whether you have a project in mind, need a tech partner, or just want to chat about IoT and software — my inbox is always open.</p>
+        <div class="c-detail" data-fade><div class="c-icon">📧</div><div class="c-txt"><strong>allansebz@email.com</strong>Email me anytime</div></div>
+        <div class="c-detail" data-fade><div class="c-icon">📍</div><div class="c-txt"><strong>Kampala, Uganda</strong>Available for remote work globally</div></div>
+        <div class="c-detail" data-fade><div class="c-icon">⏰</div><div class="c-txt"><strong>EAT (UTC+3)</strong>Usually responds within 24 hours</div></div>
+        <div class="social-row" data-fade>
+          <a href="https://github.com/yourgithub" target="_blank" class="soc-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="soc-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://twitter.com/yourhandle" target="_blank" class="soc-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter
+          </a>
+        </div>
+      </div>
+      <div class="cf-wrap" data-fade>
+        <form id="cf" novalidate>
+          <div class="frow">
+            <div class="fg"><label class="fl" for="fn">First Name</label><input class="fi" type="text" id="fn" placeholder="John" required/></div>
+            <div class="fg"><label class="fl" for="ln">Last Name</label><input class="fi" type="text" id="ln" placeholder="Doe"/></div>
+          </div>
+          <div class="fg"><label class="fl" for="em">Email</label><input class="fi" type="email" id="em" placeholder="john@example.com" required/></div>
+          <div class="fg"><label class="fl" for="sub">Subject</label><input class="fi" type="text" id="sub" placeholder="Project Inquiry"/></div>
+          <div class="fg"><label class="fl" for="msg">Message</label><textarea class="fta" id="msg" placeholder="Tell me about your project..." required></textarea></div>
+          <div class="mag-wrap mag-full">
+            <button type="submit" class="btn btn-solid f-submit mag-btn" data-label="Send it!">
+              Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </form>
+        <div class="f-success" id="fSuccess">
+          <div class="fcheck">✅</div>
+          <h3>Message Sent!</h3>
+          <p>Thanks for reaching out — I'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <div class="foot-logo">Allan <em>Sebz</em></div>
+      <ul class="foot-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-copy">© 2025 <span>Allan Sebz</span>. Crafted with passion in Kampala, Uganda.</div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════════════════════════════════════════
+     JAVASCRIPT — ALL SYSTEMS
+═══════════════════════════════════════════════════════ -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
