@@ -1,0 +1,30 @@
+.marquee-wrap{
+  padding:2rem 0;
+  background:var(--surface);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+
+.marquee-inner{
+  display:flex;
+  gap:4rem;
+  animation:marq 22s linear infinite;
+  white-space:nowrap;
+  --speed:22s;
+  animation-duration:var(--speed);
+}
+
+.marquee-inner:hover{animation-play-state:paused}
+
+.m-item{
+  font-family:var(--font-sans);font-size:clamp(1rem,2.5vw,1.4rem);
+  font-weight:700;letter-spacing:-.01em;
+  color:var(--text-faint);flex-shrink:0;
+  display:flex;align-items:center;gap:1.5rem;
+  transition:color .3s;
+}
+
+.m-item:hover{color:var(--text-muted)}
+.m-dot{color:var(--accent);font-size:.4em}
+
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
