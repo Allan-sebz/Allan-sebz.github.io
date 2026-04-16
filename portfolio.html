@@ -1318,13 +1318,13 @@ lenis.on('scroll', ({scroll,limit})=>{
   sp.style.transform = `scaleX(${scroll/limit})`;
 });
 
-/* ─── NAV SCROLL STATE ───────────────────────── */
+/* ─── NAV SCROLL STATE ──────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', ()=>{
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 }, {passive:true});
 
-/* ─── ACTIVE NAV + SIDE DOTS ─────────────────── */
+/* ─── ACTIVE NAV + SIDE DOTS ──────── */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[data-nav]');
 const sideDots = document.querySelectorAll('.side-dot');
