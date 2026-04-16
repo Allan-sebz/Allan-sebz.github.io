@@ -1339,7 +1339,7 @@ const io = new IntersectionObserver(entries=>{
 }, {rootMargin:'-40% 0px -50% 0px'});
 sections.forEach(s=>io.observe(s));
 
-/* ─── SIDE DOT CLICK ─────────────────────────── */
+/* ─── SIDE DOT CLICK ──────────── */
 sideDots.forEach(d=>{
   d.addEventListener('click',()=>{
     const target = document.getElementById(d.dataset.sec);
@@ -1347,7 +1347,7 @@ sideDots.forEach(d=>{
   });
 });
 
-/* ─── SMOOTH NAV LINKS ───────────────────────── */
+/* ─── SMOOTH NAV LINKS ─────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click', e=>{
     const t = document.querySelector(a.getAttribute('href'));
