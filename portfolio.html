@@ -1386,12 +1386,12 @@ themePill.addEventListener('click',()=>{
   localStorage.setItem('theme', next);
 });
 
-/* ─── BACK TO TOP ────────────────────────────── */
+/* ─── BACK TO TOP ───────── */
 const btt = document.getElementById('btt');
 window.addEventListener('scroll',()=>btt.classList.toggle('show', window.scrollY>500),{passive:true});
 btt.addEventListener('click',()=>lenis.scrollTo(0,{duration:1.4}));
 
-/* ─── PROJECT HOVER PREVIEW ──────────────────── */
+/* ─── PROJECT HOVER PREVIEW ─────── */
 const preview = document.getElementById('proj-preview');
 const previewInner = document.getElementById('proj-preview-inner');
 let previewX=0, previewY=0, targetX=0, targetY=0;
