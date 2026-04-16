@@ -1296,7 +1296,7 @@ document.querySelectorAll('a,button,.ftab,.chip,.cert-item,.proj-card,.serv-card
   });
 });
 
-/* ─── MAGNETIC BUTTONS ───────────────────────── */
+/* ─── MAGNETIC BUTTONS ──────────── */
 document.querySelectorAll('.mag-btn').forEach(btn=>{
   const wrap = btn.closest('.mag-wrap');
   if(!wrap) return;
@@ -1312,7 +1312,7 @@ document.querySelectorAll('.mag-btn').forEach(btn=>{
   });
 });
 
-/* ─── SCROLL PROGRESS ───────────────────────── */
+/* ─── SCROLL PROGRESS ────────── */
 const sp = document.getElementById('scroll-prog');
 lenis.on('scroll', ({scroll,limit})=>{
   sp.style.transform = `scaleX(${scroll/limit})`;
