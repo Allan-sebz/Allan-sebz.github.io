@@ -13,6 +13,8 @@
 #proj-preview.visible{opacity:1;transform:translate(-50%,-50%) scale(1)}
 
 #proj-preview-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--surface2)}
+#proj-preview-inner img{width:100%;height:100%;object-fit:cover;display:block}
+.proj-preview-placeholder{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
 
 .filter-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem}
 

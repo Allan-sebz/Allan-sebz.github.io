@@ -40,6 +40,16 @@
   transition:transform .7s var(--ease);
 }
 
+.proj-img-inner img{width:100%;height:100%;object-fit:cover;display:block}
+
+.proj-img-placeholder{
+  font-family:var(--font-mono);
+  font-size:.65rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+
 .proj-card:hover .proj-img-inner{transform:scale(1.08)}
 
 .proj-overlay{

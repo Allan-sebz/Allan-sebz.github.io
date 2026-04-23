@@ -25,6 +25,7 @@ export class ProjectGallery {
   }
 
   init() {
+    this._hydrateCardImages();
     this._bindPreview();
     this._bindFilters();
     this._buildHorizontalPin();
@@ -32,10 +33,35 @@ export class ProjectGallery {
     window.addEventListener('resize', this._boundResize);
   }
 
+  _hydrateCardImages() {
+    this.cards.forEach((card) => {
+      const imgWrap = card.querySelector('.proj-img-inner');
+      const imgPath = card.dataset.img;
+      const title = card.querySelector('.proj-title')?.textContent?.trim() || 'Project image';
+
+      if (!imgWrap) return;
+
+      if (!imgPath) {
+        imgWrap.innerHTML = '<span class="proj-img-placeholder">Add image</span>';
+        return;
+      }
+
+      imgWrap.innerHTML = `<img src="${imgPath}" alt="${title}" loading="lazy">`;
+    });
+  }
+
   _bindPreview() {
     this.cards.forEach((card) => {
       card.addEventListener('mouseenter', () => {
-        this.previewInner.textContent = card.dataset.emoji || '💻';
+        const imgPath = card.dataset.img;
+        const title = card.querySelector('.proj-title')?.textContent?.trim() || 'Project image';
+
+        if (imgPath) {
+          this.previewInner.innerHTML = `<img src="${imgPath}" alt="${title}" loading="lazy">`;
+        } else {
+          this.previewInner.innerHTML = '<span class="proj-preview-placeholder">Add image</span>';
+        }
+
         this.preview.classList.add('visible');
       });
 

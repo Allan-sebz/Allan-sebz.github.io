@@ -1666,17 +1666,6 @@ function initAllAnimations(){
 } // end initAllAnimations
 
 })();
-</script>
-// images loaded via CSS background-image for better performance and control
-<script>
-  document.querySelectorAll('.proj-card').forEach(card => {
-    const imgSrc = card.getAttribute('data-img');
-    const container = card.querySelector('.proj-img-inner');
 
-    if (imgSrc && container) {
-      container.innerHTML = `<img src="${imgSrc}" alt="Project image">`;
-    }
-  });
-</script>
 </body>
 </html>
