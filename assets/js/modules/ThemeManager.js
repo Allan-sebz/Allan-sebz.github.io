@@ -7,7 +7,7 @@ export class ThemeManager {
   }
 
   init() {
-    const saved = localStorage.getItem(this.storageKey) || 'light';
+    const saved = localStorage.getItem(this.storageKey) || 'dark';
     document.documentElement.setAttribute('data-theme', saved);
 
     if (this.toggleButton) {
