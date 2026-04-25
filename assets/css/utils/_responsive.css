@@ -32,3 +32,50 @@
   #cur-dot,#cur-ring,#cur-label{display:none}
   body,button{cursor:auto}
 }
+
+/* Enhanced mobile responsiveness */
+@media(max-width:380px){
+  .hero-h1{font-size:clamp(2rem,10vw,3rem)}
+  .hero-eyebrow{font-size:.55rem}
+  .hero-cta{gap:0.5rem}
+  .hero-stats{gap:1rem;font-size:.6rem}
+  .proj-h2{font-size:clamp(1.8rem,8vw,3rem)}
+  .proj-card{min-width:85vw}
+  #proj-preview{width:200px;height:130px}
+}
+
+@media(max-width:576px){
+  .hero-row{gap:1rem;padding:0 1rem}
+  .hero-sub{max-width:100%;font-size:.95rem}
+  .nav-logo{font-size:1.2rem}
+  .filter-tabs{gap:0.25rem}
+  .ftab{padding:6px 12px;font-size:.6rem}
+  .proj-pin-track{gap:1rem;padding-right:1rem}
+  .proj-card{min-width:calc(100vw - 4rem)}
+  #proj-preview{display:none}
+  .about-box{padding:1rem}
+  input,textarea,select,button{min-height:44px;min-width:44px;font-size:16px}
+}
+
+@media(576px < width <= 768px){
+  .proj-card{min-width:calc(50vw - 2rem)}
+  .hero-row{gap:2rem}
+  .hero-stats{gap:1.5rem}
+}
+
+@media(max-width:768px){
+  #hero,#about,#projects,#experience,#services,#contact{
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+  }
+  .container{padding:0 1.5rem}
+}
+
+body,html{
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+img{max-width:100%;height:auto;display:block}

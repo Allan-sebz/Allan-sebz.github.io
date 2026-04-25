@@ -28,7 +28,17 @@
 .ftab.active,.ftab:hover{background:var(--accent);border-color:var(--accent);color:#07080d;font-weight:600}
 
 .proj-pin-outer{overflow:hidden}
-.proj-pin-track{display:flex;gap:2rem;padding-bottom:6rem;padding-right:clamp(1.5rem,5vw,4rem);width:max-content}
+.proj-pin-track{
+  display:flex;
+  gap:2rem;
+  padding-bottom:6rem;
+  padding-right:clamp(1.5rem,5vw,4rem);
+  width:max-content;
+  scroll-behavior:smooth;
+  scroll-snap-type:x mandatory;
+}
 
-.proj-grid-fallback{display:none;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
+.proj-card{scroll-snap-align:start;scroll-snap-stop:always}
+
+.proj-grid-fallback{display:none;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem;scroll-behavior:smooth}
 .proj-grid-fallback.active{display:grid}
