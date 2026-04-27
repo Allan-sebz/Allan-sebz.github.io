@@ -1657,7 +1657,7 @@ function initAllAnimations(){
     }});
   });
 
-  /* Window resize → rebuild horizontal scroll */
+  /* Window resize rebuild horizontal scroll */
   window.addEventListener('resize', ()=>{
     const activeFilter = document.querySelector('.ftab.active')?.dataset.filter;
     if(activeFilter==='all') buildHorizontalPin();
