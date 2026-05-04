@@ -1,0 +1,38 @@
+/* SPLIT WORD ANIMATIONS */
+.split-word{
+  display:inline-block;
+  overflow:hidden;
+  vertical-align:top;
+}
+
+.split-word-inner{
+  display:block;
+  transform:translateY(105%);
+  font-weight:inherit;
+  font-family:inherit;
+}
+
+/* SCROLL PROGRESS */
+#scroll-prog{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:8500;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transform-origin:left;
+  transform:scaleX(0);
+  will-change:transform;
+}
+
+/* FADE ANIMATIONS */
+[data-fade]{
+  opacity:0;
+  transform:translateY(20px);
+}
+
+/* SPLIT ANIMATIONS */
+[data-split] .split-word-inner{
+  transform:translateY(105%);
+}
