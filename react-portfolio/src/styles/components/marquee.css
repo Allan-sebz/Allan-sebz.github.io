@@ -1,0 +1,39 @@
+/* MARQUEE */
+.marquee-wrap{
+  overflow:hidden;
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:1rem 0;
+}
+
+.marquee-inner{
+  display:flex;
+  gap:2rem;
+  white-space:nowrap;
+  will-change:transform;
+}
+
+.m-item{
+  font-size:1rem;
+  color:var(--text-muted);
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-shrink:0;
+  animation:scroll 30s linear infinite;
+}
+
+.m-dot{
+  color:var(--accent);
+  margin-left:.5rem;
+}
+
+@keyframes scroll{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-100%);
+  }
+}

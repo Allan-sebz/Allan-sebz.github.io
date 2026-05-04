@@ -1,0 +1,186 @@
+/* CONTACT SECTION */
+#contact{
+  padding:6rem 0;
+  background:var(--surface);
+}
+
+.contact-h2{
+  font-size:clamp(2rem, 5vw, 3.5rem);
+  margin-bottom:1.5rem;
+  line-height:1.2;
+}
+
+.contact-h2 em{
+  font-style:normal;
+  color:var(--accent);
+}
+
+.contact-desc{
+  font-size:1rem;
+  color:var(--text-muted);
+  line-height:1.8;
+  margin-bottom:2rem;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+}
+
+.c-detail{
+  display:flex;
+  gap:1rem;
+  margin-bottom:2rem;
+}
+
+.c-icon{
+  font-size:1.5rem;
+  flex-shrink:0;
+}
+
+.c-txt{
+  flex:1;
+}
+
+.c-txt strong{
+  display:block;
+  color:var(--text);
+  margin-bottom:.25rem;
+}
+
+.social-row{
+  display:flex;
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.soc-link{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.9rem;
+  color:var(--text-muted);
+  transition:color .3s;
+}
+
+.soc-link:hover{
+  color:var(--accent);
+}
+
+.soc-link svg{
+  transition:transform .3s;
+}
+
+.soc-link:hover svg{
+  transform:scale(1.2);
+}
+
+/* FORM */
+.cf-wrap{
+  background:var(--bg);
+  border:1px solid var(--border);
+  padding:2.5rem;
+  border-radius:var(--r);
+}
+
+.frow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  margin-bottom:1.5rem;
+}
+
+.fg{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+
+.fl{
+  font-family:var(--font-sans);
+  font-size:.85rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--text);
+}
+
+.fi,
+.fta{
+  padding:.75rem 1rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  color:var(--text);
+  font-family:inherit;
+  font-size:1rem;
+  transition:all .3s;
+}
+
+.fi:focus,
+.fta:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:var(--surface2);
+}
+
+.fta{
+  resize:vertical;
+  min-height:120px;
+}
+
+.fs-error{
+  font-size:.75rem;
+  color:var(--accent3);
+  display:none;
+}
+
+.fg.error .fs-error{
+  display:block;
+}
+
+.f-submit{
+  width:100%;
+}
+
+.f-success,
+.f-error{
+  text-align:center;
+  padding:2rem;
+}
+
+.fcheck{
+  font-size:2.5rem;
+  margin-bottom:1rem;
+}
+
+.f-success h3,
+.f-error h3{
+  font-size:1.3rem;
+  margin-bottom:.5rem;
+}
+
+.f-success p,
+.f-error p{
+  color:var(--text-muted);
+  font-size:.95rem;
+}
+
+.mag-full{
+  width:100%;
+}
+
+@media(max-width:768px){
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+  
+  .frow{
+    grid-template-columns:1fr;
+  }
+  
+  .cf-wrap{
+    padding:1.5rem;
+  }
+}
