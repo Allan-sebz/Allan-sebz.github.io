@@ -1,3 +1,28 @@
+#projPin{
+  position:relative;overflow-x:auto;overflow-y:hidden;
+  scroll-behavior:smooth;
+  overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity;
+  height:auto;
+}
+
+#projPin::-webkit-scrollbar{
+  height:6px;
+}
+
+#projPin::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+#projPin::-webkit-scrollbar-thumb{
+  background:var(--border2);
+  border-radius:3px;
+}
+
+#projPin::-webkit-scrollbar-thumb:hover{
+  background:var(--border);
+}
+
 #projects{padding:8rem 0 0;background:var(--bg)}
 .proj-header{margin-bottom:4rem}
 .proj-h2{font-size:clamp(2.2rem,5vw,4rem)}
@@ -28,7 +53,12 @@
 .ftab.active,.ftab:hover{background:var(--accent);border-color:var(--accent);color:#07080d;font-weight:600}
 
 .proj-pin-outer{overflow:hidden}
-.proj-pin-track{display:flex;gap:2rem;padding-bottom:6rem;padding-right:clamp(1.5rem,5vw,4rem);width:max-content}
+.proj-pin-track{
+  display:flex;gap:2rem;padding-bottom:6rem;padding-right:clamp(1.5rem,5vw,4rem);width:max-content;
+  scroll-behavior:smooth;
+  min-width:100%;
+}
+.proj-pin-track > *{scroll-snap-align:start;scroll-snap-stop:always}
 
 .proj-grid-fallback{display:none;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
 .proj-grid-fallback.active{display:grid}
