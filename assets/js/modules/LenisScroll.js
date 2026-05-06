@@ -14,10 +14,12 @@ export class LenisScroll {
   }
 
   init() {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 900;
+
     this.lenis = new this.Lenis({
-      duration: 1.3,
+      duration: isTouchDevice ? 1 : 1.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
+      smooth: !isTouchDevice,
       smoothTouch: false
     });
 

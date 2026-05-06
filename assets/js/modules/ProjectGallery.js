@@ -102,6 +102,15 @@ export class ProjectGallery {
     });
   }
 
+  _isMobileOrTouch() {
+    return (
+      window.matchMedia('(max-width: 900px)').matches ||
+      window.matchMedia('(hover: none)').matches ||
+      window.matchMedia('(pointer: coarse)').matches ||
+      ('ontouchstart' in window)
+    );
+  }
+
   _buildHorizontalPin() {
     if (this.pinScrollTrigger) {
       this.pinScrollTrigger.kill();
@@ -120,10 +129,28 @@ export class ProjectGallery {
       card.style.display = '';
       this.projTrack.appendChild(card);
     });
+    this.pinEl.scrollLeft = 0;
+
+    const isMobileOrTouch = this._isMobileOrTouch();
+
+    if (isMobileOrTouch) {
+      this.pinEl.style.overflowX = 'auto';
+      this.pinEl.style.overflowY = 'hidden';
+      this.gsap.set(this.projTrack, { x: 0, clearProps: 'transform' });
+      return;
+    }
+
+    this.pinEl.style.overflowX = 'hidden';
+    this.pinEl.style.overflowY = 'hidden';
 
     const trackW = this.projTrack.scrollWidth;
     const viewW = window.innerWidth;
-    const scrollDist = trackW - viewW + window.innerWidth * 0.05;
+    const scrollDist = Math.max(0, trackW - viewW + window.innerWidth * 0.05);
+
+    if (scrollDist <= 16) {
+      this.gsap.set(this.projTrack, { x: 0 });
+      return;
+    }
 
     this.pinScrollTrigger = this.ScrollTrigger.create({
       id: 'hscroll',
@@ -174,7 +201,7 @@ export class ProjectGallery {
 
   _handleResize() {
     const activeFilter = document.querySelector('.ftab.active')?.dataset.filter;
-    if (activeFilter === 'all') {
+    if (activeFilter === 'all' || !activeFilter) {
       this._buildHorizontalPin();
     }
   }

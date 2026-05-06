@@ -92,18 +92,19 @@ export class AnimationController {
 
   _bindFadeAnimations() {
     document.querySelectorAll('[data-fade]').forEach((el) => {
-      this.gsap.fromTo(
+      this.gsap.from(
         el,
-        { y: 50, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
+          y: 50,
+          opacity: 0,
+          immediateRender: false,
           duration: 0.9,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: el,
             start: 'top 87%',
-            toggleActions: 'play none none none'
+            toggleActions: 'play none none none',
+            once: true
           }
         }
       );
@@ -120,7 +121,8 @@ export class AnimationController {
         scrollTrigger: {
           trigger: frame,
           start: 'top 85%',
-          toggleActions: 'play none none none'
+          toggleActions: 'play none none none',
+          once: true
         }
       });
     }
@@ -136,7 +138,8 @@ export class AnimationController {
         scrollTrigger: {
           trigger: floatingCard,
           start: 'top 85%',
-          toggleActions: 'play none none none'
+          toggleActions: 'play none none none',
+          once: true
         }
       });
     }
@@ -157,19 +160,20 @@ export class AnimationController {
 
   _bindServiceStagger() {
     this.gsap.utils.toArray('.serv-card').forEach((card, i) => {
-      this.gsap.fromTo(
+      this.gsap.from(
         card,
-        { y: 60, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.85,
+          y: 60,
+          opacity: 0,
+          immediateRender: false,
+          duration: 0.9,
           ease: 'power3.out',
           delay: i * 0.12,
           scrollTrigger: {
             trigger: card,
             start: 'top 89%',
-            toggleActions: 'play none none none'
+            toggleActions: 'play none none none',
+            once: true
           }
         }
       );
@@ -178,18 +182,19 @@ export class AnimationController {
 
   _bindTimelineAnimations() {
     document.querySelectorAll('.tl-item').forEach((item) => {
-      this.gsap.fromTo(
+      this.gsap.from(
         item,
-        { x: -30, opacity: 0 },
         {
-          x: 0,
-          opacity: 1,
+          x: -30,
+          opacity: 0,
+          immediateRender: false,
           duration: 0.8,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: item,
             start: 'top 90%',
-            toggleActions: 'play none none none'
+            toggleActions: 'play none none none',
+            once: true
           }
         }
       );
@@ -198,19 +203,20 @@ export class AnimationController {
 
   _bindCertAnimations() {
     document.querySelectorAll('.cert-item').forEach((item, i) => {
-      this.gsap.fromTo(
+      this.gsap.from(
         item,
-        { x: 30, opacity: 0 },
         {
-          x: 0,
-          opacity: 1,
+          x: 30,
+          opacity: 0,
+          immediateRender: false,
           duration: 0.7,
           ease: 'power3.out',
           delay: i * 0.1,
           scrollTrigger: {
             trigger: item,
             start: 'top 92%',
-            toggleActions: 'play none none none'
+            toggleActions: 'play none none none',
+            once: true
           }
         }
       );
