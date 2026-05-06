@@ -17,7 +17,7 @@
 .fl-txt span{font-size:.75rem;color:var(--text-muted)}
 
 .proj-card{
-  width:380px;flex-shrink:0;
+  width:clamp(300px, calc(100vw - 3rem), 380px);flex-shrink:0;
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r);overflow:hidden;
   transition:border-color .4s,transform .4s var(--ease),box-shadow .4s;
