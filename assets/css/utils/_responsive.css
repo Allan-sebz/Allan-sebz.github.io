@@ -22,6 +22,8 @@
   .container{padding:0 1rem}
   .nav-links{display:none}
   .nav-ham{display:flex}
+  #about,#contact,#experience,#services{padding:5rem 0}
+  #projects{padding:5rem 0 0}
   #hero{min-height:0;padding:calc(var(--nav-h) + 1rem) 1rem 4rem}
   .hero-row{gap:1.5rem}
   .hero-sub{max-width:none;font-size:.95rem;line-height:1.7}
@@ -37,6 +39,8 @@
   .frow{grid-template-columns:1fr}
   .fi,.fta{font-size:16px}
   .hero-h1{font-size:clamp(2.4rem,12vw,4rem)}
+  .skbar-top span:first-child{flex:1 1 0%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .skbar-top span:last-child{flex-shrink:0}
   /* Projects section responsive fixes */
   #projPin{overflow-x:auto !important;overflow-y:hidden !important}
   .proj-pin-track{gap:1rem;padding-bottom:1.25rem;padding-right:1rem}
@@ -55,7 +59,8 @@
 
 
 @media(max-width:480px){
-  #about,#projects,#experience,#services,#contact{padding:5.25rem 0}
+  #about,#contact,#experience,#services{padding:4rem 0}
+  #projects{padding:4rem 0 0}
   .hero-h1{font-size:clamp(2.2rem,12vw,3.2rem)}
   .hero-eyebrow{letter-spacing:.12em}
   .c-detail{align-items:flex-start}

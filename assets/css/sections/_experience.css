@@ -2,6 +2,14 @@
 .exp-h2{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:4rem}
 .exp-cols{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
 
+@media(max-width:768px){
+  #experience{padding:5rem 0}
+}
+
+@media(max-width:480px){
+  #experience{padding:4rem 0}
+}
+
 .exp-col-label{
   font-family:var(--font-sans);font-size:.75rem;font-weight:700;
   letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);

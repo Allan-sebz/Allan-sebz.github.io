@@ -41,9 +41,20 @@
 
 .skbars{display:flex;flex-direction:column;gap:1rem}
 .skbar-top{display:flex;justify-content:space-between;margin-bottom:6px;font-size:.8rem;color:var(--text-muted)}
+.skbar-top span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1 1 0%;min-width:0}
+.skbar-top span:last-child{flex-shrink:0}
 .skbar-track{height:3px;background:var(--border2);border-radius:3px;overflow:hidden}
 .skbar-fill{height:100%;width:0%;border-radius:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width 1.6s var(--ease)}
 
+@media(max-width:480px){
+  .skbar-top{font-size:.72rem}
+}
+
+@media(max-width:768px){
+  .about-grid{gap:2rem}
+  .about-img-col{display:block;max-width:none;margin:0}
+  .fl-card{position:static;bottom:auto;right:auto;margin-top:1rem;transform:none;opacity:1}
+}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
 
 .chip{

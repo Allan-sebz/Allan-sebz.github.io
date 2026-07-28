@@ -27,6 +27,17 @@
 .proj-header{margin-bottom:4rem}
 .proj-h2{font-size:clamp(2.2rem,5vw,4rem)}
 
+@media(max-width:768px){
+  #projPin{touch-action:pan-y}
+  .proj-pin-track{overflow-x:auto;scroll-snap-type:x mandatory}
+  .proj-pin-track > *{scroll-snap-align:start;scroll-snap-stop:always;flex-shrink:0}
+  .proj-card{width:min(340px,85vw)}
+}
+
+@media(max-width:480px){
+  .proj-card{width:min(300px,88vw)}
+}
+
 #proj-preview{
   position:fixed;z-index:8000;pointer-events:none;
   width:280px;height:180px;border-radius:12px;overflow:hidden;

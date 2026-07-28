@@ -4,6 +4,14 @@
 .contact-h2{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:1.5rem}
 .contact-desc{color:var(--text-muted);line-height:1.85;margin-bottom:2.5rem;font-size:1rem}
 
+@media(max-width:480px){
+  .cf-wrap{padding:1.1rem}
+  .frow{grid-template-columns:1fr}
+  .cf-wrap .mag-wrap{width:100%}
+  .cf-wrap .mag-wrap .f-submit{width:100%;justify-content:center}
+  .c-detail{align-items:flex-start}
+  .c-txt strong{word-break:break-all;overflow-wrap:break-word}
+}
 .c-detail{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
 .c-icon{width:42px;height:42px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
 .c-txt{font-size:.88rem;color:var(--text-muted);overflow-wrap:anywhere;word-break:break-word}
@@ -26,6 +34,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 0 2r
 .foot-logo{font-family:var(--font-display);font-style:italic;font-size:1.3rem}
 .foot-logo em{font-style:normal;color:var(--accent)}
 .foot-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
+
+@media(max-width:600px){
+  .foot-inner{flex-direction:column;align-items:center;text-align:center;gap:1.5rem}
+  .foot-links{justify-content:center;flex-wrap:wrap;gap:1.25rem}
+}
 .foot-links a{font-size:.78rem;color:var(--text-muted);letter-spacing:.03em;transition:color .3s}
 .foot-links a:hover{color:var(--accent)}
 .foot-copy{font-size:.72rem;color:var(--text-faint);text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}

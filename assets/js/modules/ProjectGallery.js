@@ -18,6 +18,7 @@ export class ProjectGallery {
     this.targetX = 0;
     this.targetY = 0;
     this._rafId = null;
+    this._resizeTimer = null;
 
     this._boundResize = this._handleResize.bind(this);
 
@@ -131,9 +132,9 @@ export class ProjectGallery {
     });
     this.pinEl.scrollLeft = 0;
 
-    const isMobileOrTouch = this._isMobileOrTouch();
+    const isMobileLayout = window.innerWidth <= 768 || this._isMobileOrTouch();
 
-    if (isMobileOrTouch) {
+    if (isMobileLayout) {
       this.pinEl.style.overflowX = 'auto';
       this.pinEl.style.overflowY = 'hidden';
       this.gsap.set(this.projTrack, { x: 0, clearProps: 'transform' });
@@ -200,10 +201,13 @@ export class ProjectGallery {
   }
 
   _handleResize() {
-    const activeFilter = document.querySelector('.ftab.active')?.dataset.filter;
-    if (activeFilter === 'all' || !activeFilter) {
-      this._buildHorizontalPin();
-    }
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = window.setTimeout(() => {
+      const activeFilter = document.querySelector('.ftab.active')?.dataset.filter;
+      if (activeFilter === 'all' || !activeFilter) {
+        this._buildHorizontalPin();
+      }
+    }, 200);
   }
 
   destroy() {
