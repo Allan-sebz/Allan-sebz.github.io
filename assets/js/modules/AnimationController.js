@@ -42,13 +42,13 @@ export class AnimationController {
 
     const heroWords = this._splitWords(heroTitle);
 
-    this.gsap.to('.hero-badge', { opacity: 1, y: 0, duration: 0.7, delay: 0.05, ease: 'power2.out' });
-    this.gsap.to('.hero-eyebrow', { opacity: 1, duration: 0.7, delay: 0.1 });
+    this.gsap.to('.hero-badge', { y: 0, duration: 0.7, delay: 0.05, ease: 'power2.out' });
+    this.gsap.to('.hero-eyebrow', { duration: 0.7, delay: 0.1 });
     this.gsap.to(heroWords, { y: 0, duration: 0.9, stagger: 0.055, delay: 0.2, ease: 'power3.out' });
-    this.gsap.to('.hero-sub', { opacity: 1, y: 0, duration: 0.9, delay: 0.55, ease: 'power2.out' });
-    this.gsap.to('.hero-cta', { opacity: 1, duration: 0.8, delay: 0.75 });
-    this.gsap.to('.hero-stats', { opacity: 1, duration: 0.8, delay: 0.95 });
-    this.gsap.to('.hero-scroll', { opacity: 1, duration: 1, delay: 1.5 });
+    this.gsap.to('.hero-sub', { y: 0, duration: 0.9, delay: 0.55, ease: 'power2.out' });
+    this.gsap.to('.hero-cta', { duration: 0.8, delay: 0.75 });
+    this.gsap.to('.hero-stats', { duration: 0.8, delay: 0.95 });
+    this.gsap.to('.hero-scroll', { duration: 1, delay: 1.5 });
   }
 
   _bindStatsCounters() {
@@ -96,7 +96,6 @@ export class AnimationController {
         el,
         {
           y: 50,
-          opacity: 0,
           immediateRender: false,
           duration: 0.9,
           ease: 'power3.out',
@@ -130,7 +129,6 @@ export class AnimationController {
     const floatingCard = document.getElementById('floatCard');
     if (floatingCard) {
       this.gsap.to(floatingCard, {
-        opacity: 1,
         y: 0,
         duration: 0.9,
         ease: 'power3.out',
@@ -164,7 +162,6 @@ export class AnimationController {
         card,
         {
           y: 60,
-          opacity: 0,
           immediateRender: false,
           duration: 0.9,
           ease: 'power3.out',
@@ -186,7 +183,6 @@ export class AnimationController {
         item,
         {
           x: -30,
-          opacity: 0,
           immediateRender: false,
           duration: 0.8,
           ease: 'power3.out',
@@ -207,7 +203,6 @@ export class AnimationController {
         item,
         {
           x: 30,
-          opacity: 0,
           immediateRender: false,
           duration: 0.7,
           ease: 'power3.out',

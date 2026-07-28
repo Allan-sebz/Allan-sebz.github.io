@@ -26,7 +26,7 @@
   border:1px solid var(--border2);border-radius:100px;
   font-family:var(--font-mono);font-size:.65rem;
   color:var(--accent);letter-spacing:.08em;
-  margin-bottom:2.5rem;opacity:0;
+  margin-bottom:2.5rem;
 }
 
 .badge-pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:bpulse 2s ease infinite}
@@ -35,7 +35,7 @@
 .hero-eyebrow{
   font-family:var(--font-mono);font-size:.65rem;
   letter-spacing:.2em;text-transform:uppercase;
-  color:var(--accent2);margin-bottom:1.25rem;opacity:0;
+  color:var(--accent2);margin-bottom:1.25rem;
   overflow-wrap:break-word;word-break:break-word;
 }
 
@@ -44,13 +44,12 @@
 
 .hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;flex-wrap:wrap}
 
-.hero-sub{max-width:420px;font-size:1.05rem;color:var(--text-muted);line-height:1.75;opacity:0}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;margin-top:2rem}
+.hero-sub{max-width:420px;font-size:1.05rem;color:var(--text-muted);line-height:1.75}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
 
 .hero-scroll{
   position:absolute;bottom:3rem;left:clamp(1.5rem,5vw,4rem);
   display:flex;flex-direction:column;align-items:flex-start;gap:12px;
-  opacity:0;
 }
 
 .hero-scroll-line{
@@ -71,7 +70,6 @@
   display:flex;gap:3rem;flex-wrap:wrap;
   padding-top:3.5rem;margin-top:3.5rem;
   border-top:1px solid var(--border);
-  opacity:0;
 }
 
 .stat-n{font-family:var(--font-sans);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--accent);line-height:1;display:block}
