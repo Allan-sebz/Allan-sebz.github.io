@@ -7,7 +7,7 @@
 #side-index{
   position:fixed;right:2.5rem;top:50%;z-index:5000;
   -webkit-transform:translateZ(0);
-  transform:translateY(-50%) translateZ(0);
+  transform:translate3d(0,-50%,0);
   -webkit-backface-visibility:hidden;
   backface-visibility:hidden;
   will-change:transform;
@@ -38,7 +38,7 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:7000;
   height:var(--nav-h);
   -webkit-transform:translateZ(0);
-  transform:translateZ(0);
+  transform:translate3d(0,0,0);
   -webkit-backface-visibility:hidden;
   backface-visibility:hidden;
   will-change:transform;

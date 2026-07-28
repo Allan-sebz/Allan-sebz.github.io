@@ -54,6 +54,8 @@
   .about-grid{gap:2rem}
   .about-img-col{display:block;max-width:none;margin:0}
   .fl-card{position:static;bottom:auto;right:auto;margin-top:1rem;transform:none;opacity:1}
+  .skbar-top span:first-child{flex:1 1 0%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .skbar-top span:last-child{flex-shrink:0}
 }
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
 
