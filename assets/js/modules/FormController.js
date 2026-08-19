@@ -6,6 +6,8 @@ export class FormController {
     this.errorContainer = document.getElementById('formError');
     this.errorMsg = document.getElementById('formErrorMsg');
     this.cfWrap = document.querySelector('.cf-wrap');
+    this.submitBtn = this.form ? this.form.querySelector('[data-fs-submit-btn]') : null;
+    this.submitBtnOriginalHTML = this.submitBtn ? this.submitBtn.innerHTML : '';
 
     this.init();
   }
@@ -13,14 +15,16 @@ export class FormController {
   init() {
     if (!this.form) return;
     this._observeFormState();
+    this._observeSubmitState();
     this._bindCustomAnimations();
   }
 
   _observeFormState() {
-    // Watch for Formspree success state via data attribute
+    // Formspree's AJAX widget signals success/error by toggling a
+    // `data-fs-active` attribute on these containers (not inline style).
     const observer = new MutationObserver(() => {
-      const hasSuccess = this.successContainer && this.successContainer.style.display !== 'none';
-      const hasError = this.errorContainer && this.errorContainer.style.display !== 'none';
+      const hasSuccess = this.successContainer && this.successContainer.hasAttribute('data-fs-active');
+      const hasError = this.errorContainer && this.errorContainer.hasAttribute('data-fs-active');
 
       if (hasSuccess) {
         this._animateSuccess();
@@ -30,8 +34,26 @@ export class FormController {
     });
 
     if (this.successContainer && this.errorContainer) {
-      observer.observe(this.successContainer, { attributes: true, attributeFilter: ['style'] });
-      observer.observe(this.errorContainer, { attributes: true, attributeFilter: ['style'] });
+      observer.observe(this.successContainer, { attributes: true, attributeFilter: ['data-fs-active'] });
+      observer.observe(this.errorContainer, { attributes: true, attributeFilter: ['data-fs-active'] });
+    }
+  }
+
+  _observeSubmitState() {
+    // Formspree sets aria-busy="true" on the form while a submission is in flight.
+    if (!this.form || !this.submitBtn) return;
+    const observer = new MutationObserver(() => {
+      this._setSubmitting(this.form.getAttribute('aria-busy') === 'true');
+    });
+    observer.observe(this.form, { attributes: true, attributeFilter: ['aria-busy'] });
+  }
+
+  _setSubmitting(isSubmitting) {
+    if (!this.submitBtn) return;
+    if (isSubmitting) {
+      this.submitBtn.innerHTML = '<span class="btn-spinner"></span> Sending...';
+    } else {
+      this.submitBtn.innerHTML = this.submitBtnOriginalHTML;
     }
   }
 
@@ -54,6 +76,7 @@ export class FormController {
   }
 
   _animateError() {
+    this.errorContainer.style.display = 'block';
     this.gsap.fromTo(
       this.errorContainer,
       { opacity: 0, y: 10, scale: 0.98 },
@@ -66,7 +89,6 @@ export class FormController {
         y: -10,
         duration: 0.3,
         ease: 'power2.in',
-        delay: 4,
         onComplete: () => {
           this.errorContainer.style.display = 'none';
         }
