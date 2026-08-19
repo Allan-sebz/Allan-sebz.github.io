@@ -10,7 +10,6 @@
   .cf-wrap .mag-wrap{width:100%}
   .cf-wrap .mag-wrap .f-submit{width:100%;justify-content:center}
   .c-detail{align-items:flex-start}
-  .c-txt strong{word-break:break-all;overflow-wrap:break-word}
 }
 .c-detail{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
 .c-icon{width:42px;height:42px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
