@@ -75,6 +75,9 @@
 .pgh{background:var(--surface);border:1px solid var(--border2);color:var(--text)}
 .pgh:hover{border-color:var(--accent);color:var(--accent)}
 
+.plbtn-static{cursor:default;color:var(--text-muted)}
+.plbtn-static:hover{border-color:var(--border2);color:var(--text-muted)}
+
 .proj-body{padding:1.5rem}
 .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
 
