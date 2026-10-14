@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /react-portfolio/
+Disallow: /*.md$
+
+Sitemap: https://www.allans.engineer/sitemap.xml
